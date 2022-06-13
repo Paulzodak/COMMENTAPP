@@ -1,0 +1,78 @@
+body {
+  background-color: #F5F6FA;
+}
+
+html {
+  font-size: 100%;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: 20% 60% 15%;
+  background-color: #FFFFFF;
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.container .box1 {
+  position: relative;
+  padding: 0.2rem;
+}
+.container .box1 .Profile_image {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline;
+  margin-right: 0.9rem;
+}
+.container .box1 .name {
+  font-size: 0.9rem;
+}
+.container .box1 .Date {
+  font-size: 0.9rem;
+  left: 10rem;
+}
+.container .box1 .name,
+.container .box1 .Date {
+  display: inline;
+  position: absolute;
+  bottom: 30%;
+  margin: 3px;
+}
+.container .box2 {
+  padding: 1rem 0rem;
+}
+.container .box3 {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  box-sizing: border-box;
+}
+.container .box3 .utility_btns {
+  box-sizing: border-box;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 35% 30% 35%;
+  background-color: #F5F6FA;
+  border-radius: 10px;
+}
+.container .box3 .utility_btns .plus,
+.container .box3 .utility_btns .minus,
+.container .box3 .utility_btns .number {
+  text-align: center;
+  margin: auto;
+}
+.container .box3 .utility_btns .minus {
+  position: relative;
+  bottom: 9%;
+}
+.container .box3 .reply_btn {
+  text-align: center;
+  padding: 0.5rem 0rem;
+  margin-left: 1.5rem;
+}
+.container .box3 .reply_btn img {
+  vertical-align: middle;
+}
+.container .box3 .reply_btn span {
+  margin-left: 0.5rem;
+}/*# sourceMappingURL=commentitem.css.map */

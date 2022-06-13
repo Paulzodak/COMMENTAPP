@@ -1,0 +1,30 @@
+.body {
+  background-color: red;
+}
+
+.comment_input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 6rem;
+}
+
+.send_container {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+  width: 100%;
+  padding: 1rem 0rem 0rem 0rem;
+  box-sizing: border-box;
+}
+.send_container img {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline;
+}
+.send_container button {
+  display: inline;
+  background-color: #5357b7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}/*# sourceMappingURL=addcomment.css.map */

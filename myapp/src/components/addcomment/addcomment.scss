@@ -1,0 +1,32 @@
+@import "addcommentvariables.scss";
+.body {
+  background-color: red;
+}
+.comment_input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 6rem;
+}
+.send_container {
+  margin: 0;
+  // border: 1px solid #000000;
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+  // justify-content: space-between;
+  width: 100%;
+  // height: 5rem;
+  padding: 1rem 0rem 0rem 0rem;
+  box-sizing: border-box;
+  & img {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline;
+  }
+  & button {
+    display: inline;
+    background-color: $btn_color;
+    color: white;
+    border: none;
+    border-radius: 10px;
+  }
+}
