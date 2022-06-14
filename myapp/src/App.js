@@ -5,6 +5,7 @@ import Addcomment from "./components/addcomment/addcomment";
 import Card from "./components/commentitem/card";
 
 // -------IMAGES PNGS---------
+import anonymous from "./images/anonymous.jpeg";
 import amyrobson from "./images/avatars/image-amyrobson.png";
 import juliusomo from "./images/avatars/image-juliusomo.png";
 import maxblagus from "./images/avatars/image-maxblagun.png";
@@ -66,24 +67,29 @@ function App() {
     },
   ];
 
+  const [userInput, setUserInput] = useState();
+  console.log(userInput);
+
   const [dummycomments, setComments] = useState(comments);
   const commentsUpdater = () => {
+    setUserInput(23);
     setComments((oldcomment) => [
-      ...oldcomment,
-      {
-        id: 5,
-        content:
-          "edhidwdnkwndwiwndiwndwbdeuvdeguwfvejgjwfvewfveywfveiuduycvyhsdbhev degdv",
-        createdAt: "9 weeks ago",
-        score: 1,
-        user: {
-          image: {
-            png: maxblagus,
-            webp: maxblagus.webp,
-          },
-          username: "wsqwqsqs",
-        },
-      },
+      oldcomment.push(userInput),
+      // {
+      //   id: 3,
+      //   content:
+      //     "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
+      //   createdAt: "1 week ago",
+      //   score: 4,
+      //   replyingTo: "maxblagun",
+      //   user: {
+      //     image: {
+      //       png: ramsesmiron,
+      //       webp: ramsesmironwebp,
+      //     },
+      //     username: "ramsesmiron",
+      //   },
+      // },
     ]);
     console.log(dummycomments);
   };
@@ -102,7 +108,7 @@ function App() {
       ))}
 
       <Card>
-        <Addcomment></Addcomment>
+        <Addcomment setUserInput={setUserInput}></Addcomment>
       </Card>
       <button onClick={commentsUpdater}>UPDATE STATE</button>
     </div>

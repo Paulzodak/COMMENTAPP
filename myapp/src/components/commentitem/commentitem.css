@@ -1,5 +1,5 @@
 body {
-  background-color: #F5F6FA;
+  background-color: #f5f6fa;
 }
 
 html {
@@ -10,7 +10,7 @@ html {
   position: relative;
   display: grid;
   grid-template-rows: 20% 60% 15%;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin: 1rem;
   border-radius: 10px;
   padding: 1rem;
@@ -52,7 +52,7 @@ html {
   height: 100%;
   display: grid;
   grid-template-columns: 35% 30% 35%;
-  background-color: #F5F6FA;
+  background-color: #f5f6fa;
   border-radius: 10px;
 }
 .container .box3 .utility_btns .plus,
