@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import { useState } from "react";
 import Commentitem from "./components/commentitem/commentitem.js";
 import Addcomment from "./components/addcomment/addcomment";
 import Card from "./components/commentitem/card";
@@ -64,9 +65,31 @@ function App() {
       ],
     },
   ];
+
+  const [dummycomments, setComments] = useState(comments);
+  const commentsUpdater = () => {
+    setComments((oldcomment) => [
+      ...oldcomment,
+      {
+        id: 5,
+        content:
+          "edhidwdnkwndwiwndiwndwbdeuvdeguwfvejgjwfvewfveywfveiuduycvyhsdbhev degdv",
+        createdAt: "9 weeks ago",
+        score: 1,
+        user: {
+          image: {
+            png: maxblagus,
+            webp: maxblagus.webp,
+          },
+          username: "wsqwqsqs",
+        },
+      },
+    ]);
+    console.log(dummycomments);
+  };
   return (
     <div className="App">
-      {comments.map((x) => (
+      {dummycomments.map((x) => (
         <Card>
           <Commentitem
             message={x.content}
@@ -81,6 +104,7 @@ function App() {
       <Card>
         <Addcomment></Addcomment>
       </Card>
+      <button onClick={commentsUpdater}>UPDATE STATE</button>
     </div>
   );
 }
