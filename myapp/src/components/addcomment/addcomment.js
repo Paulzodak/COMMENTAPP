@@ -2,11 +2,13 @@ import "./addcomment.css";
 import { useState } from "react";
 import current_user from "../../images/avatars/image-juliusomo.png";
 function Addcomment({ setUserInput }) {
+  let id2 = 4;
   const userInputHandler = (event) => {
+    id2 = id2 + 1;
     const userinput = event.target.value;
     console.log(userinput);
     setUserInput({
-      id: 1,
+      id: id2,
       content: userinput,
       createdAt: "1 month ago",
       score: 12,
@@ -20,16 +22,16 @@ function Addcomment({ setUserInput }) {
       replies: [],
     });
   };
-  const userInputSend = () => {
-    // setUserInput(userinput);
-  };
+  // const userInputSend = () => {
+  //   setUserInput(userinput);
+  // };
   return (
     <div>
       <input className="comment_input" onChange={userInputHandler}></input>
       <div className="send_container">
         <img src={current_user}></img>
         <div></div>
-        <button onClick={userInputHandler}>SEND</button>
+        <button>SEND</button>
       </div>
     </div>
   );

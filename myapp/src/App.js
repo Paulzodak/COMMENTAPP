@@ -71,33 +71,18 @@ function App() {
   console.log(userInput);
 
   const [dummycomments, setComments] = useState(comments);
+
   const commentsUpdater = () => {
     setUserInput(23);
-    setComments((oldcomment) => [
-      oldcomment.push(userInput),
-      // {
-      //   id: 3,
-      //   content:
-      //     "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
-      //   createdAt: "1 week ago",
-      //   score: 4,
-      //   replyingTo: "maxblagun",
-      //   user: {
-      //     image: {
-      //       png: ramsesmiron,
-      //       webp: ramsesmironwebp,
-      //     },
-      //     username: "ramsesmiron",
-      //   },
-      // },
-    ]);
+    setComments((oldcomment) => [...oldcomment, userInput]);
     console.log(dummycomments);
   };
   return (
     <div className="App">
       {dummycomments.map((x) => (
-        <Card>
+        <Card key={x.id}>
           <Commentitem
+            key={x.id}
             message={x.content}
             score={x.score}
             username={x.user.username}
@@ -108,7 +93,10 @@ function App() {
       ))}
 
       <Card>
-        <Addcomment setUserInput={setUserInput}></Addcomment>
+        <Addcomment
+          setUserInput={setUserInput}
+          commentsupdate={commentsUpdater}
+        ></Addcomment>
       </Card>
       <button onClick={commentsUpdater}>UPDATE STATE</button>
     </div>
